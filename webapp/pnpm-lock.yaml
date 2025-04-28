@@ -8,6 +8,15 @@ importers:
 
   .:
     dependencies:
+      '@tanstack/react-query':
+        specifier: ^5.74.2
+        version: 5.74.2(react@19.1.0)
+      '@trpc/client':
+        specifier: ^11.1.0
+        version: 11.1.0(@trpc/server@11.1.0(typescript@5.7.3))(typescript@5.7.3)
+      '@trpc/react-query':
+        specifier: ^11.1.0
+        version: 11.1.0(@tanstack/react-query@5.74.2(react@19.1.0))(@trpc/client@11.1.0(@trpc/server@11.1.0(typescript@5.7.3))(typescript@5.7.3))(@trpc/server@11.1.0(typescript@5.7.3))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(typescript@5.7.3)
       react:
         specifier: ^19.0.0
         version: 19.1.0
@@ -39,6 +48,9 @@ importers:
       globals:
         specifier: ^15.15.0
         version: 15.15.0
+      prettier:
+        specifier: ^3.5.3
+        version: 3.5.3
       typescript:
         specifier: ~5.7.2
         version: 5.7.3
@@ -471,6 +483,35 @@ packages:
     resolution: {integrity: sha512-jjqy3uWlecfB98Psxb5cD6Fny9Fupv9LrDSPTQZUROqjvZmcCqNu4UMl7qqhlUUGpwiAkotj6GYu4SZdcr/nLw==}
     cpu: [x64]
     os: [win32]
+
+  '@tanstack/query-core@5.74.2':
+    resolution: {integrity: sha512-zxiLXIJ0TYsemnkL04qXWRxHSPiJbDfkaCUFbDz5pE2CUQBGoU6Xg3oPWkpQrz0G/7T+kMV7gtvXCrz/pCtoAg==}
+
+  '@tanstack/react-query@5.74.2':
+    resolution: {integrity: sha512-L0Jsa1/73fw1nNrWzlnosYqSGBksjR4ZhKGvC+kp4N/6CyGRF1UsrNWjVH6PRHmeJNxh315OhMUoYlWwyHveNQ==}
+    peerDependencies:
+      react: ^18 || ^19
+
+  '@trpc/client@11.1.0':
+    resolution: {integrity: sha512-Q3pL4p7AddxI/ZJTEFo1utKSdasDFjZPECIPsKDkthEt52k530JkYVltTdLkYFKrNWXKKBo8MN7NwchelczoRw==}
+    peerDependencies:
+      '@trpc/server': 11.1.0
+      typescript: '>=5.7.2'
+
+  '@trpc/react-query@11.1.0':
+    resolution: {integrity: sha512-qdqKdFM8hVy/YSBCg1/3VO+IgB6Nbul3Fk1SA3lefGf0bkYZdWVVyKab8HBAfOWlMsuRufhVLPdKYmnjzBrK9g==}
+    peerDependencies:
+      '@tanstack/react-query': ^5.67.1
+      '@trpc/client': 11.1.0
+      '@trpc/server': 11.1.0
+      react: '>=18.2.0'
+      react-dom: '>=18.2.0'
+      typescript: '>=5.7.2'
+
+  '@trpc/server@11.1.0':
+    resolution: {integrity: sha512-uAJ7ikejeujVkf53XFJ/0W8nr7bDjul+Szk5Rsepq97Hb/WS1RkRXdyX4KqAyCE9b1vDFCJVJwSxiIZdRtbTZQ==}
+    peerDependencies:
+      typescript: '>=5.7.2'
 
   '@types/babel__core@7.20.5':
     resolution: {integrity: sha512-qoQprZvz5wQFJwMDqeseRXWv3rqMvhgpbXFfVyWhbx9X47POIA6i/+dXefEmZKoAgOaTdaIgNSMqMIU61yRyzA==}
@@ -909,6 +950,11 @@ packages:
   prelude-ls@1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
+
+  prettier@3.5.3:
+    resolution: {integrity: sha512-QQtaxnoDJeAkDvDKWCLiwIXkTgRhwYDEQCghU9Z6q03iyek/rxRh/2lC3HB7P8sWT2xC/y5JDctPLBIGzHKbhw==}
+    engines: {node: '>=14'}
+    hasBin: true
 
   punycode@2.3.1:
     resolution: {integrity: sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==}
@@ -1407,6 +1453,31 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.38.0':
     optional: true
 
+  '@tanstack/query-core@5.74.2': {}
+
+  '@tanstack/react-query@5.74.2(react@19.1.0)':
+    dependencies:
+      '@tanstack/query-core': 5.74.2
+      react: 19.1.0
+
+  '@trpc/client@11.1.0(@trpc/server@11.1.0(typescript@5.7.3))(typescript@5.7.3)':
+    dependencies:
+      '@trpc/server': 11.1.0(typescript@5.7.3)
+      typescript: 5.7.3
+
+  '@trpc/react-query@11.1.0(@tanstack/react-query@5.74.2(react@19.1.0))(@trpc/client@11.1.0(@trpc/server@11.1.0(typescript@5.7.3))(typescript@5.7.3))(@trpc/server@11.1.0(typescript@5.7.3))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(typescript@5.7.3)':
+    dependencies:
+      '@tanstack/react-query': 5.74.2(react@19.1.0)
+      '@trpc/client': 11.1.0(@trpc/server@11.1.0(typescript@5.7.3))(typescript@5.7.3)
+      '@trpc/server': 11.1.0(typescript@5.7.3)
+      react: 19.1.0
+      react-dom: 19.1.0(react@19.1.0)
+      typescript: 5.7.3
+
+  '@trpc/server@11.1.0(typescript@5.7.3)':
+    dependencies:
+      typescript: 5.7.3
+
   '@types/babel__core@7.20.5':
     dependencies:
       '@babel/parser': 7.27.0
@@ -1885,6 +1956,8 @@ snapshots:
       source-map-js: 1.2.1
 
   prelude-ls@1.2.1: {}
+
+  prettier@3.5.3: {}
 
   punycode@2.3.1: {}
 
